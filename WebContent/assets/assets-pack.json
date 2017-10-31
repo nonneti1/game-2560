@@ -1,0 +1,96 @@
+{
+  "level": [
+    {
+      "type": "image",
+      "key": "mono",
+      "url": "assets/images/mono.png",
+      "overwrite": false
+    },
+    {
+      "type": "tilemap",
+      "key": "lab7",
+      "url": "assets/tilemap/lab7.json",
+      "format": "TILED_JSON"
+    },
+    {
+      "type": "spritesheet",
+      "key": "tile_sheet",
+      "url": "assets/tilemap/tile_sheet.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "tile_set",
+      "url": "assets/tilemap/tile_set.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "image",
+      "key": "bg",
+      "url": "assets/images/bg.png",
+      "overwrite": false
+    },
+    {
+      "type": "atlas",
+      "key": "cat",
+      "textureURL": "assets/atlas/cat.png",
+      "atlasURL": "assets/atlas/cat.json",
+      "format": "TEXTURE_ATLAS_JSON_HASH"
+    },
+    {
+      "type": "atlas",
+      "key": "dog",
+      "textureURL": "assets/atlas/dog.png",
+      "atlasURL": "assets/atlas/dog.json",
+      "format": "TEXTURE_ATLAS_JSON_HASH"
+    },
+    {
+      "type": "atlas",
+      "key": "jack",
+      "textureURL": "assets/atlas/jack.png",
+      "atlasURL": "assets/atlas/jack.json",
+      "format": "TEXTURE_ATLAS_JSON_HASH"
+    },
+    {
+      "type": "atlas",
+      "key": "knight",
+      "textureURL": "assets/atlas/knight.png",
+      "atlasURL": "assets/atlas/knight.json",
+      "format": "TEXTURE_ATLAS_JSON_HASH"
+    },
+    {
+      "type": "atlas",
+      "key": "robot",
+      "textureURL": "assets/atlas/robot.png",
+      "atlasURL": "assets/atlas/robot.json",
+      "format": "TEXTURE_ATLAS_JSON_HASH"
+    }
+  ],
+  "start": [{
+    "type": "image",
+    "key": "tap-to-start",
+    "url": "assets/images/tap-to-start.png",
+    "overwrite": false
+  }],
+  "preload": [{
+    "type": "image",
+    "key": "loading",
+    "url": "assets/images/loading.png",
+    "overwrite": false
+  }],
+  "meta": {
+    "generated": "1508394746321",
+    "app": "Phaser Editor",
+    "url": "http://phasereditor.boniatillo.com",
+    "version": "1.0",
+    "copyright": "Arian Fornaris (c) 2015,2016"
+  }
+}
