@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> New Document </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+  <SCRIPT LANGUAGE="JavaScript" src="svg.min.js"></SCRIPT>
+ </HEAD>
+
+ <BODY>
+  Number:<input id=num value=""><input type='button' value='Add' onclick='add()'>
+  <div id="drawing"></div>
+  <script>
+  var tree = SVG('drawing').size(1000, 800)
+  var root = null;
+  
+  function add(){
+	t = num.value;
+	if(t=='') return;
+	n=parseInt(t);
+	if(root==null){
+	  root = newNode(n);	  
+	}else{
+	  addNode(root,n,1)	
+	}
+	updateTree(root);
+  }
+  function updateTree(a){
+	   
+  }
+  function newNode(n){
+	  var a = tree.nested().move(500,30);
+	  a.circle(50).fill('#faa');
+	  a.plain(""+n).move(15,15);
+	  a.num   = n;
+	  a.left  = null;
+	  a.right = null;
+	  a.lline = null;
+	  a.rline = null;
+	  return a;
+  }
+  function newLine(a,b){
+	  console.log(b);
+	  return  tree.line(a.attr('x')+25,a.attr('y')+25,
+					   b.attr('x')+25,b.attr('y')+25	
+	  ).stroke({color: '#f06',width: 1}).back();	 
+  }
+  function addNode(x,n,level){
+	  if(n<x.num){
+		 if(x.left==null) x.left=newNode(n);
+		 else addNode(x.left,n,level+1);
+		 x.left.move(x.attr('x')-(180-level*18),x.attr('y')+80);
+	  }
+	  if(n>x.num){
+		 if(x.right==null) x.right=newNode(n);
+		 else addNode(x.right,n,level+1);
+		 x.right.move(x.attr('x')+(250-level*15),x.attr('y')+100);
+	  }
+	  if(x.left!=null && x.lline==null){
+		x.lline = newLine(x,x.left) 
+	  }
+	  if(x.right!=null && x.rline==null){
+		x.rline = newLine(x,x.right).stroke({color: '#60f'});  
+	  }
+  }
+  </script>
+  
+ </BODY>
+</HTML>
